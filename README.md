@@ -14,3 +14,13 @@ The result will be either 'head' or 'tail'
 
 ## The smart contract
 Lets first create the smart cotnracts.
+
+Point your browser at: https://remix.ethereum.org/
+
+## Remix Development environment
+Remix is an easy to use development environment directly available within your web browser. Simply it is a browser-based IDE.
+
+Point your browser at: https://remix.ethereum.org/
+
+## Usefull Resources
+* Remix online editor - https://remix.ethereum.org/
