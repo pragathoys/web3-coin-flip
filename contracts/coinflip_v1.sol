@@ -6,5 +6,5 @@ contract Coinflip{
     function flip() public{
 
     }
-    
+
 }
