@@ -47,6 +47,22 @@ Add this code inside the contract:
 ```
  You can copy and paste the code of the file [coinflip_v2.sol](contracts/coinflip_v2.sol).
 
+Now lets add the following logic inside the **flip()** function:
+```Solidity
+         uint random_modulo = randomize() % 2;
+        if(random_modulo == 0){
+            return "head";
+        }else{
+            return "tail";
+        } 
+ ```
+ You can copy and paste the code of the file [coinflip_v3.sol](contracts/coinflip_v3.sol).
+
+ You can compile and run the flip() method in remix. For example in a 10-times run I got the following:
+ Tail-Head-Head-Tail-Tail-Head-Head-Tail-Tail-Tail
+ Heads: 4 times
+ Tail: 6 times
+ Almost 50% which shows an indication that our try is justice. Of course you have to run more than 10 times the contract.
 
 ## Pseudo Random logic
 Since there is no builtin function to create a random number we will use what we have. So our logic will be:
@@ -65,6 +81,10 @@ In order to make things more random we will combine two unique string at each mo
 ```
 
 Please notice that we have used **abi.encode** instead of **abi.encodePacked** in order to avoid any possible collisions.
+
+Finally,  we convert the hashed string into an uint number with : uint(string_hashed)
+
+we will check the modulo of this number against 2 in order to see if it has or not a modulo. This will convert to either tail or head.
 
 ## Remix Development environment
 Remix is an easy to use development environment directly available within your web browser. Simply it is a browser-based IDE.
