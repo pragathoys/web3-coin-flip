@@ -17,6 +17,23 @@ Lets first create the smart cotnracts.
 
 Point your browser at: https://remix.ethereum.org/
 
+Create a new file inside the contracts folder and name it as coinflip.sol . You can copy and paste the code of the file [coinflip_v1.sol](contracts/coinflip_v1.sol).
+
+This is the basic structure of our smart contract:
+
+```Solidity
+/* SPDX-License-Identifier: UNLICENCED */
+pragma solidity ^0.8.0;
+
+contract Coinflip{
+
+    function flip() public{
+
+    }
+    
+}
+```
+
 ## Remix Development environment
 Remix is an easy to use development environment directly available within your web browser. Simply it is a browser-based IDE.
 
