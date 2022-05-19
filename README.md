@@ -62,7 +62,7 @@ Now lets add the following logic inside the **flip()** function:
  Tail-Head-Head-Tail-Tail-Head-Head-Tail-Tail-Tail
  Heads: 4 times
  Tail: 6 times
- 
+
  Almost around 50% which is an indication that our implementation  is quite fair. Of course you have to run more than 10 times the contract.
 
 ## Pseudo Random logic
@@ -72,7 +72,7 @@ Since there is no built-in function to create a random number we will use what w
 2. Convert the hashed string into a unsigned integer number
 3. Use this number as a random number
 4. We will check the modulo of this number with 2
-5. If the modulo is zero is a 'tail' else it is 'head'
+5. If the modulo is zero is a 'head' else it is 'tail'
 
 For this to work we will use the keccak256 (SHA-3 family) algorithm which computes the hash of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type:
 ```Solidity
