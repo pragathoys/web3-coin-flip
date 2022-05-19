@@ -76,7 +76,7 @@ Since there is no built-in function to create a random number we will use what w
 
 For this to work we will use the keccak256 (SHA-3 family) algorithm which computes the hash of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type:
 ```Solidity
-    bytes32 string_hashed = keccak256( <RANDOM STRING> );
+    bytes32 string_hashed = keccak256( <RANDOM BYTES> );
 ```
 
 In order to make things more random we will combine two unique string at each moment from the blockchain itself, the difficulty of the blockchain and the timestamp:
@@ -94,11 +94,28 @@ we will check the modulo of this number against 2 in order to see if it has or n
 Lets see step by step how this works in a real example.
 
 Lets suppose you have the following values from the block:
-* block.difficulty = 70762765929000
-* block.timestamp  = 1652950047
+* (uint) block.difficulty = 70762765929000
+* (uint) block.timestamp  = 1652950047
 
-then creating the random string with abi.encode will produce:
-abi.encode( 70762765929000 , 1652950047) = 0x0000000000000000000000000000000000000000000000000000405bbd86ca28000000000000000000000000000000000000000000000000000000006286041f
+then creating the random bytes with abi.encode will produce:
+
+(bytes) abi.encode( 70762765929000 , 1652950047) = 0x0000000000000000000000000000000000000000000000000000405bbd86ca28000000000000000000000000000000000000000000000000000000006286041f
+
+Then the function keccak256 will give us:
+
+(bytes32) keccak256( 0x0000000000000000000000000000000000000000000000000000405bbd86ca28000000000000000000000000000000000000000000000000000000006286041f ) = 0x0a0ec6ee2611b0e51e7695cf5bee00dd8e4d066f1cefbd4e3e6e1b7f3604c167
+
+The conversion to an unsigned integer is:
+
+uint(0x0a0ec6ee2611b0e51e7695cf5bee00dd8e4d066f1cefbd4e3e6e1b7f3604c167)= 4549237310992677314902422250164659468874992821884556711175460015978781655399
+
+Finally the module of 2 will give 1:
+
+4549237310992677314902422250164659468874992821884556711175460015978781655399 % 2 = 1
+
+And with our implemented logic this converts into **head** !
+
+
 
 ## Remix Development environment
 Remix is an easy to use online development environment directly available within your web browser. Simply it is a browser-based IDE.
