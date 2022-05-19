@@ -59,8 +59,11 @@ Now lets add the following logic inside the **flip()** function:
  You can also copy and paste the code of the file [coinflip_v3.sol](contracts/coinflip_v3.sol).
 
  You can compile and run the flip() method in remix. For example in a 10-times run I got the following:
+
  Tail-Head-Head-Tail-Tail-Head-Head-Tail-Tail-Tail
+
  Heads: 4 times
+ 
  Tail: 6 times
 
  Almost around 50% which is an indication that our implementation  is quite fair. Of course you have to run more than 10 times the contract.
