@@ -97,5 +97,5 @@ Point your browser at: https://remix.ethereum.org/ and starting writing code for
 ## Usefull Resources
 * Remix online editor - https://remix.ethereum.org/
 * Solidity Types - https://docs.soliditylang.org/en/v0.8.12/types.html
-* Contract ABI Specification - https://docs.soliditylang.org/en/develop/abi-spec.html
+* Contract ABI Specification - https://docs.soliditylang.org/en/develop/abi-spec.html
 * SHA-3 - https://en.wikipedia.org/wiki/SHA-3
