@@ -62,7 +62,8 @@ Now lets add the following logic inside the **flip()** function:
  Tail-Head-Head-Tail-Tail-Head-Head-Tail-Tail-Tail
  Heads: 4 times
  Tail: 6 times
- Almost 50% which shows an indication that our try is justice. Of course you have to run more than 10 times the contract.
+ 
+ Almost around 50% which is an indication that our implementation  is quite fair. Of course you have to run more than 10 times the contract.
 
 ## Pseudo Random logic
 Since there is no built-in function to create a random number we will use what we have. So our logic will be:
@@ -75,7 +76,7 @@ Since there is no built-in function to create a random number we will use what w
 
 For this to work we will use the keccak256 (SHA-3 family) algorithm which computes the hash of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type:
 ```Solidity
-bytes32 string_hashed = keccak256( <RANDOM STRING> );
+    bytes32 string_hashed = keccak256( <RANDOM STRING> );
 ```
 
 In order to make things more random we will combine two unique string at each moment from the blockchain itself, the difficulty of the blockchain and the timestamp:
