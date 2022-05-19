@@ -49,12 +49,12 @@ You can also copy and paste the code of the file [coinflip_v2.sol](contracts/coi
 
 Now lets add the following logic inside the **flip()** function:
 ```Solidity
-         uint random_modulo = randomize() % 2;
-        if(random_modulo == 0){
-            return "head";
-        }else{
-            return "tail";
-        } 
+    uint random_modulo = randomize() % 2;
+    if(random_modulo == 0){
+        return "head";
+    }else{
+        return "tail";
+    } 
  ```
  You can also copy and paste the code of the file [coinflip_v3.sol](contracts/coinflip_v3.sol).
 
