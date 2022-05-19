@@ -90,6 +90,16 @@ Finally,  we convert the hashed string into an unsigned integer with : uint(stri
 
 we will check the modulo of this number against 2 in order to see if it has or not a modulo. This will convert to either tail or head.
 
+## Full Example
+Lets see step by step how this works in a real example.
+
+Lets suppose you have the following values from the block:
+* block.difficulty = 70762765929000
+* block.timestamp  = 1652950047
+
+then creating the random string with abi.encode will produce:
+abi.encode( 70762765929000 , 1652950047) = 0x0000000000000000000000000000000000000000000000000000405bbd86ca28000000000000000000000000000000000000000000000000000000006286041f
+
 ## Remix Development environment
 Remix is an easy to use online development environment directly available within your web browser. Simply it is a browser-based IDE.
 
